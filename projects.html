@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Projects</title>
+  <meta name="description" content="Projects curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/archaeology/projects.html">
+  <meta property="og:title" content="Projects">
+  <meta property="og:description" content="Projects curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/archaeology/projects.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/archaeology/">Archaeology</a></li>
+      <li><a href="/archaeology/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/archaeology/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/archaeology" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="projects">Projects</h1>
+<blockquote>
+<p>"What I cannot create, I do not understand." — Richard Feynman</p>
+</blockquote>
+<ul>
+<li><a href="#build-your-own-3d-artifact-models">3D Artifact Models</a></li>
+<li><a href="#construct-your-own-archaeological-site-grids">Archaeological Site Grids</a></li>
+<li><a href="#map-your-own-lidar-landscape-features">LiDAR Landscape Features</a></li>
+<li><a href="#draw-your-own-archaeological-artifact-illustrations">Archaeological Artifact Illustrations</a></li>
+<li><a href="#photograph-your-own-archaeological-artifact-photographs">Archaeological Artifact Photographs</a></li>
+<li><a href="#design-your-own-heritage-trails">Heritage Trails</a></li>
+<li><a href="#publish-your-own-public-archaeology-articles">Public Archaeology Articles</a></li>
+<li><a href="#plan-your-own-community-archaeology-initiatives">Community Archaeology Initiatives</a></li>
+<li><a href="#write-your-own-archaeological-research-papers">Archaeological Research Papers</a></li>
+</ul>
+<h2 id="build-your-own-3d-artifact-models">Build your own 3D artifact models</h2>
+<ul>
+<li><a href="https://digventures.com/2016/05/how-to-do-photogrammetry-for-archaeology-part-1/" target="_blank" rel="noopener noreferrer">How To Do Photogrammetry for Archaeology, Part 1 (DigVentures)</a></li>
+<li><a href="https://leakeyfoundation.org/a-simple-photogrammetry-rig-for-the-reliable-creation-of-3d-artifact-models-in-the-field/" target="_blank" rel="noopener noreferrer">A Simple Method for Reliable Creation of 3D Artifact Models in the Field (The Leakey Foundation)</a></li>
+</ul>
+<h2 id="construct-your-own-archaeological-site-grids">Construct your own archaeological site grids</h2>
+<ul>
+<li><a href="https://arf.berkeley.edu/creating-archaeological-site-grids-in-qgis-3-x" target="_blank" rel="noopener noreferrer">Creating Archaeological Site Grids in QGIS 3.x (UC Berkeley Archaeological Research Facility)</a></li>
+<li><a href="https://arf.berkeley.edu/how-to-georeference-and-clip-geophysical-data-in-qgis-3-x" target="_blank" rel="noopener noreferrer">How to Georeference and Clip Geophysical Data in QGIS 3.x (UC Berkeley Archaeological Research Facility)</a></li>
+</ul>
+<h2 id="map-your-own-lidar-landscape-features">Map your own LiDAR landscape features</h2>
+<ul>
+<li><a href="https://historicengland.org.uk/images-books/publications/using-airborne-lidar-in-archaeological-survey/" target="_blank" rel="noopener noreferrer">Using Airborne Lidar in Archaeological Survey: The Light Fantastic (Historic England)</a></li>
+<li><a href="https://surreylidar.org.uk/wp_sur/wp/get-involved/" target="_blank" rel="noopener noreferrer">Get Involved in Mapping LiDAR Data (Surrey Archaeological Society)</a></li>
+</ul>
+<h2 id="draw-your-own-archaeological-artifact-illustrations">Draw your own archaeological artifact illustrations</h2>
+<ul>
+<li><a href="https://spadeandthegrave.com/2020/06/19/an-introduction-of-archaeological-illustration-small-finds/" target="_blank" rel="noopener noreferrer">An Introduction to Archaeological Illustration: Small Finds (Spade &amp; the Grave)</a></li>
+</ul>
+<h2 id="photograph-your-own-archaeological-artifacts">Photograph your own archaeological artifacts</h2>
+<ul>
+<li><a href="https://collections-anthropology.fieldmuseum.org/sites/default/files/Basic%20Guidelines%20for%20Artifact%20Photography.pdf" target="_blank" rel="noopener noreferrer">Basic Guidelines for Artifact Photography (Field Museum)</a></li>
+<li><a href="https://hsscarchaeology.wordpress.com/2015/06/09/photographing-artifacts/" target="_blank" rel="noopener noreferrer">Photographing Artifacts (Castle Museum Archaeology Lab)</a></li>
+</ul>
+<h2 id="design-your-own-heritage-trails">Design your own heritage trails</h2>
+<ul>
+<li><a href="https://www.archaeologyuk.org/resource/create-your-own-heritage-trail.html" target="_blank" rel="noopener noreferrer">Create Your Own Heritage Trail (Council for British Archaeology)</a></li>
+<li><a href="https://savingplaces.org/stories/preservation-tips-tools-seven-steps-plan-heritage-trail" target="_blank" rel="noopener noreferrer">Seven Tips to Create a Heritage Trail (National Trust for Historic Preservation)</a></li>
+</ul>
+<h2 id="publish-your-own-public-archaeology-articles">Publish your own public archaeology articles</h2>
+<ul>
+<li><a href="https://www.succinctresearch.com/ultimate-tips-for-archaeology-blogging-part-1/" target="_blank" rel="noopener noreferrer">Ultimate Tips for Archaeology Blogging, Part 1 (Succinct Research)</a></li>
+</ul>
+<h2 id="plan-your-own-community-archaeology-initiatives">Plan your own community archaeology initiatives</h2>
+<ul>
+<li><a href="https://digventures.com/2013/12/community-archaeology-a-survival-guide/" target="_blank" rel="noopener noreferrer">Community Archaeology: A Survival Guide! (DigVentures)</a></li>
+</ul>
+<h2 id="write-your-own-archaeological-research-papers">Write your own archaeological research papers</h2>
+<ul>
+<li><a href="https://www.bu.edu/archaeology/programs/writing-guide/" target="_blank" rel="noopener noreferrer">Writing Guide in Archaeology (Boston University)</a></li>
+</ul>
+    </article>
+  </main>
+
+</body>
+</html>

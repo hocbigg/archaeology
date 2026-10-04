@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Advanced Topics in Archaeology</title>
+  <meta name="description" content="Advanced Topics in Archaeology curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/archaeology/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics in Archaeology">
+  <meta property="og:description" content="Advanced Topics in Archaeology curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/archaeology/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/archaeology/">Archaeology</a></li>
+      <li><a href="/archaeology/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/archaeology/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/archaeology" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="advanced-topics-in-archaeology">Advanced Topics in Archaeology</h1>
+<p>Learners who have completed the core undergraduate curriculum are encouraged to select one or two specialization tracks aligned with their research interests or career goals, rather than working through all topics sequentially.</p>
+<ul>
+<li><strong>Digital Archaeology &amp; Computational Methods</strong> - Spatial analysis, 3D visualization, satellite remote sensing, and simulation modeling for landscape and site investigation.</li>
+<li><strong>Environmental Archaeology</strong> - Scientific methods for analyzing animal bones, plant macroremains, geoarchaeological sediments, and isotopic signatures to reconstruct ancient ecosystems and diets.</li>
+<li><strong>Bioarchaeology &amp; Human Osteoarchaeology</strong> - Skeletal biology, paleopathological diagnosis, ancient DNA, and the mortuary analysis of human remains.</li>
+<li><strong>Public Archaeology &amp; Cultural Heritage Management</strong> - Regulatory compliance, Section 106, NAGPRA and repatriation ethics, museum curation, and site protection in contested environments.</li>
+<li><strong>Material Culture Analysis</strong> - Laboratory characterization, compositional science, and experimental replication of lithics, ceramics, and ancient metallurgical technologies.</li>
+</ul>
+<h2 id="digital-archaeology-computational-methods">Digital Archaeology &amp; Computational Methods</h2>
+<p>Advanced computational and spatial tools applied to recording, modeling, and interpreting archaeological landscapes and material data.</p>
+<p>Archaeological Spatial Analysis: <a href="https://books.google.com/books?isbn=9780815373230" target="_blank" rel="noopener noreferrer">Archaeological Spatial Analysis: A Methodological Guide (Mark Gillings, Piraye Hacıgüzeller, &amp; Gary Lock, eds.)</a> - A comprehensive guide to spatial theory, point pattern analysis, viewsheds, and landscape modeling specifically constructed for archaeological inquiries.</p>
+<p>Reproducible Computational Workflows: <a href="https://o-date.github.io" target="_blank" rel="noopener noreferrer">The Open Digital Archaeology Textbook Environment (Shawn Graham et al.)</a> - An open-access interactive text with executable Python and R notebooks covering network analysis, text mining, and digital repository curation.</p>
+<p>Agent-Based Simulation: <a href="https://santafeinstitute.github.io/ABMA/" target="_blank" rel="noopener noreferrer">Agent-Based Modeling for Archaeology: Simulating the Complexity of Societies (Santa Fe Institute Press / Iza Romanowska, Colin D. Wren, &amp; Stefani A. Crabtree)</a> - A free, complete textbook with downloadable NetLogo code providing hands-on training in simulating ancient exchange, movement, and resource use.</p>
+<p>Satellite Remote Sensing: <a href="https://www.futurelearn.com/courses/remote-sensing-in-archaeology" target="_blank" rel="noopener noreferrer">Advanced Archaeological Remote Sensing: Site Prospection, Landscape Archaeology and Heritage Protection (FutureLearn / Durham University)</a> - A multi-week open course teaching multispectral satellite data processing, digital elevation modeling, and QGIS integration for site prospection.</p>
+<p>Airborne Laser Scanning (LiDAR): <a href="https://doi.org/10.5281/zenodo.14609210" target="_blank" rel="noopener noreferrer">Guidelines for the Use of Airborne Laser Scanning (LiDAR) in Archaeology (EAC Guidelines 10 / Rebecca Bennett &amp; Dave Cowley, eds.)</a> - The European Archaeological Council's technical manual detailing point-cloud processing, digital terrain models, and landscape feature visualization.</p>
+<h2 id="environmental-archaeology">Environmental Archaeology</h2>
+<p>Scientific methods for analyzing ecological remains to reconstruct ancient climate, subsistence strategies, and anthropogenic environmental change.</p>
+<p>Zooarchaeology: <a href="https://books.google.com/books?isbn=9780521673938" target="_blank" rel="noopener noreferrer">Zooarchaeology (Elizabeth J. Reitz &amp; Elizabeth S. Wing / Cambridge University Press)</a> - The definitive manual for identifying vertebrate skeletal elements, calculating relative taxonomic abundance (NISP and MNI), and interpreting butchery and taphonomy.</p>
+<p>Archaeobotany: <a href="https://sites.google.com/sheffield.ac.uk/archaeobotany/" target="_blank" rel="noopener noreferrer">Archaeobotanical Online Tutorial (University of Sheffield)</a> - An open practical training tutorial covering the recovery, anatomical identification, and dietary interpretation of charred seeds, fruits, and wood charcoal.</p>
+<p>Isotopic Analysis &amp; Paleodiet: <a href="https://books.google.com/books?isbn=9780521144124" target="_blank" rel="noopener noreferrer">Archaeological Science: An Introduction (Michael P. Richards &amp; Kate Britton, eds. / Cambridge University Press)</a> - An authoritative textbook providing in-depth chapters on carbon, nitrogen, strontium, and oxygen isotope ratios for tracing ancient food webs, weaning patterns, and residential mobility.</p>
+<p>Geoarchaeology &amp; Site Formation: <a href="https://historicengland.org.uk/images-books/publications/geoarchaeology-earth-sciences-to-understand-archaeological-record/" target="_blank" rel="noopener noreferrer">Geoarchaeology: Using Earth Sciences to Understand the Archaeological Record (Historic England)</a> - An open technical handbook providing guidance on sedimentology, soil micromorphology, and depositional processes that create and modify archaeological sites.</p>
+<h2 id="bioarchaeology-human-osteoarchaeology">Bioarchaeology &amp; Human Osteoarchaeology</h2>
+<p>The analysis of human skeletal and dental remains to reconstruct demographic profiles, morbidity, physical activity, and ancient population movement.</p>
+<p>Human Osteoarchaeology: <a href="https://www.coursera.org/learn/truthinourbones-osteoarchaeology-archaeology" target="_blank" rel="noopener noreferrer">Osteoarchaeology: The Truth in Our Bones (Coursera / Leiden University)</a> - A university-level online course covering sex estimation, age-at-death assessment, skeletal biomechanics, and paleodemography; free to audit.</p>
+<p>Paleopathology: <a href="https://www.taylorfrancis.com/books/oa-mono/10.4324/9781003475026/concise-guide-differential-diagnosis-palaeopathology-efthymia-nikita-mahmoud-mardini" target="_blank" rel="noopener noreferrer">A Concise Guide to Differential Diagnosis in Palaeopathology (Taylor &amp; Francis / Efthymia Nikita &amp; Mahmoud Mardini)</a> - An open-access diagnostic guide organized by disease etiology to systematically evaluate pathological lesions, metabolic conditions, trauma, and infectious diseases on human bones.</p>
+<p>Archaeogenetics &amp; Ancient DNA: <a href="https://books.google.com/books?isbn=9780198821267" target="_blank" rel="noopener noreferrer">Who We Are and How We Got Here: Ancient DNA and the New Science of the Human Past (Google Books / David Reich)</a> - A foundational text detailing how paleogenomics isolates ancient DNA to trace migration, archaic introgression, and deep population history alongside the archaeological record.</p>
+<p>Mortuary Skeletal Analysis: <a href="https://books.google.com/books?isbn=9781138045675" target="_blank" rel="noopener noreferrer">The Archaeology of Human Bones (Simon Mays / Routledge)</a> - The standard comprehensive text synthesizing anatomical analysis with archaeological context, burial taphonomy, and historical biological questions.</p>
+<h2 id="public-archaeology-cultural-heritage-management">Public Archaeology &amp; Cultural Heritage Management</h2>
+<p>The legal frameworks, ethical mandates, professional standards, and community partnerships governing archaeological practice and cultural heritage preservation.</p>
+<p>Public &amp; Community Archaeology: <a href="https://doi.org/10.14324/111.9781911576419" target="_blank" rel="noopener noreferrer">Key Concepts in Public Archaeology (UCL Press / Gabriel Moshenska, ed.)</a> - A peer-reviewed, open-access textbook exploring descendant community engagement, the politics of heritage, illicit antiquities trade, and open scholarship.</p>
+<p>Cultural Resource Management (CRM): <a href="https://books.google.com/books?isbn=9781789206524" target="_blank" rel="noopener noreferrer">Cultural Resource Management: A Collaborative Primer for Archaeologists (Google Books / Thomas F. King, ed.)</a> - A practitioner's guide to compliance archaeology, Section 106 review, adverse effect mitigation, and public preservation policy.</p>
+<p>Repatriation &amp; Indigenous Collaboration: <a href="https://books.google.com/books?isbn=9780226684444" target="_blank" rel="noopener noreferrer">Plundered Skulls and Stolen Spirits: Inside the Fight to Reclaim Native America's Culture (Google Books / Chip Colwell)</a> - A case-study analysis of NAGPRA compliance, museum curatorial dilemmas, sacred cultural property, and the ethics of descendant collaboration.</p>
+<p>Endangered Heritage &amp; Protection: <a href="https://www.coursera.org/learn/heritage-protection" target="_blank" rel="noopener noreferrer">Heritage under Threat (Coursera / Leiden University)</a> - An online course examining heritage destruction during armed conflicts, looting prevention, international protection treaties, and crisis response; free to audit.</p>
+<p>Heritage Institution Management: <a href="https://www.coursera.org/learn/arts-heritage" target="_blank" rel="noopener noreferrer">Arts and Heritage Management (Coursera / Bocconi University)</a> - A structured course focusing on governance, audience development, curatorial strategy, and financial sustainability for museums and archaeological monuments; free to audit.</p>
+<h2 id="material-culture-analysis">Material Culture Analysis</h2>
+<p>Specialized analytical, physical, and experimental approaches to reconstructing the manufacturing chains and operational sequences of ancient technologies.</p>
+<p>Lithic Analysis: <a href="https://books.google.com/books?isbn=9780521615006" target="_blank" rel="noopener noreferrer">Lithics: Macroscopic Approaches to Analysis (Google Books / William Andrefsky Jr.)</a> - The standard laboratory manual detailing reduction sequences, core technologies, flake morphology, tool typology, and debitage attribute quantification.</p>
+<p>Ceramic Analysis: <a href="https://books.google.com/books?isbn=9780226923215" target="_blank" rel="noopener noreferrer">Pottery Analysis: A Sourcebook (Google Books / Prudence M. Rice)</a> - The authoritative reference on clay mineralogy, paste preparation, pyrotechnology, vessel morphology, and scientific provenance methods for archaeological ceramics.</p>
+<p>Archaeometallurgy: <a href="https://books.google.com/books?isbn=9781461490166" target="_blank" rel="noopener noreferrer">Archaeometallurgy in Global Perspective: Methods and Syntheses (Google Books / Benjamin W. Roberts &amp; Christopher P. Thornton, eds.)</a> - An advanced methodological manual covering ore extraction, smelting slag analysis, metal alloy characterization, and elemental provenance.</p>
+<p>Experimental Archaeology: <a href="https://books.google.com/books?isbn=9781607320227" target="_blank" rel="noopener noreferrer">Designing Experimental Research in Archaeology: Examining Technology through Production and Use (Google Books / Jeffrey R. Ferguson, ed.)</a> - A guide to establishing rigorous, repeatable scientific experiments to validate functional and technological hypotheses in material culture research.</p>
+<p>Materials Science in Archaeology: <a href="https://ocw.mit.edu/courses/3-094-materials-in-human-experience-spring-2004/" target="_blank" rel="noopener noreferrer">Materials in Human Experience (MIT OpenCourseWare / Heather Lechtman &amp; Linn Hobbs)</a> - University lecture notes, readings, and laboratory modules connecting materials science, mechanical properties, and cultural choices in ancient ceramics, metals, and polymers.</p>
+    </article>
+  </main>
+
+</body>
+</html>

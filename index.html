@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Hocbigg - Archaeology</title>
+  <meta name="description" content="Path to a free self-taught education in Archaeology.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/archaeology/">
+  <meta property="og:title" content="Hocbigg - Archaeology">
+  <meta property="og:description" content="Path to a free self-taught education in Archaeology.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/archaeology/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/archaeology/">Archaeology</a></li>
+      <li><a href="/archaeology/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/archaeology/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/archaeology" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+<header class="page-header">
+  <img src="/images/logo.png" alt="Hocbigg logo">
+  <h1>Hocbigg - Archaeology</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Archaeology.</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-09-21">2026-09-21</time></small></p>
+</header>
+<h2 id="introduction">Introduction</h2>
+<p>Archaeology investigates the human past through its surviving physical traces — from micro-artifacts and stratified sediments to monuments and regional landscapes. While written history is constrained to literate societies and biased toward administrative elites, archaeology examines the full temporal depth of the human career, offering a tangible perspective on technological change, subsistence strategies, and social organization.</p>
+<p>This curriculum is designed for self-directed learners with no previous formal background in anthropology or archaeology. It assumes zero prior field experience or institutional access. The focus is on developing conceptual literacy: understanding what the discipline has learned about the human past, how archaeologists gather and date physical evidence, and how they use interpretive models to reconstruct social life from fragmented material remains.</p>
+<p>The four subjects in this curriculum follow a deliberate linear progression:</p>
+<ul>
+<li>Begin with <strong>Introduction to Archaeology</strong> to learn the history of the discipline, its core ethical obligations toward cultural heritage, and how archaeological questions are formed.</li>
+<li>Proceed to <strong>Archaeological Methods and Field Techniques</strong>, which explains the scientific mechanics of discovery — how sites are surveyed, excavated, stratigraphically recorded, and dated through relative and chronometric methods.</li>
+<li>Continue to <strong>Archaeological Theory</strong>, which provides the conceptual frameworks necessary to interpret material patterns — examining how the field evolved from descriptive culture history to processual (scientific) and post-processual (contextual and critical) paradigms.</li>
+<li>Conclude with <strong>World Prehistory</strong>, where you synthesize methodological and theoretical concepts across a global survey spanning early hominin evolution, the origins of agriculture, and the emergence of complex societies.</li>
+</ul>
+<p>Because evaluating prehistory and theoretical debates depends on understanding how field data is recovered, dated, and analyzed, following this sequence from beginning to end provides the most coherent foundation.</p>
+<p>Note: This page covers only the essential core of undergraduate archaeology — the foundational concepts, methods, and narratives that every learner in the discipline should study before specializing. Once you have built this baseline, you can explore specialized analytical tracks (such as zooarchaeology, GIS and spatial modeling, or cultural resource management) in <a href="advanced_topics.html">Advanced Topics</a> or apply practical skills to tangible deliverables in <a href="projects.html">Projects</a>.</p>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="introduction-to-archaeology">Introduction to Archaeology</h3>
+<p>What archaeology is, how it developed as a discipline, its relationship to anthropology and history, and the ethical principles that govern archaeological practice.</p>
+<p><a href="https://www.coursera.org/specializations/introduction-to-archaeology" target="_blank" rel="noopener noreferrer">Introduction to Archaeology Specialization (Coursera / Rice University)</a> - A four-course sequence covering the discipline's history, scientific methods, interpretation, and contemporary social relevance. Free to audit; the specialization forms a structured backbone for the entire core curriculum.</p>
+<p><a href="https://socialsci.libretexts.org/Bookshelves/Anthropology/Archaeology/Traces_-_An_Open_Introduction_to_Archaeology" target="_blank" rel="noopener noreferrer">Traces: An Open Introduction to Archaeology (LibreTexts)</a> - A free, openly licensed textbook designed for introductory archaeology courses. Use it alongside the Coursera lectures as a reference and for deeper reading on specific topics.</p>
+<p><a href="https://www.youtube.com/playlist?list=PLsHH_OkB36-mRIj6T76nTARRqObkTY-Mf" target="_blank" rel="noopener noreferrer">Intro to Archaeology (YouTube / Professor Brian Wygal)</a> - A 13-video lecture series based on Renfrew and Bahn's textbook. A good option if you prefer watching lectures over reading; covers similar ground to the resources above.</p>
+<p><a href="https://archive.org/details/archaeologytheor0000renf" target="_blank" rel="noopener noreferrer">Archaeology: Theories, Methods, and Practice (Internet Archive / Colin Renfrew &amp; Paul Bahn)</a> - The standard introductory textbook worldwide; this Internet Archive copy is an older edition but still covers the fundamentals well. The current 8th edition (ISBN 9780500843208) is worth buying if you want the latest research and updated illustrations, but the older edition is sufficient for core learning.</p>
+<h3 id="archaeological-methods-and-field-techniques">Archaeological Methods and Field Techniques</h3>
+<p>How archaeologists locate, excavate, record, and analyze sites and artifacts, including survey strategies, excavation procedure, artifact classification, and dating methods.</p>
+<p><a href="https://ocw.mit.edu/courses/3-986-the-human-past-introduction-to-archaeology-fall-2006" target="_blank" rel="noopener noreferrer">The Human Past: Introduction to Archaeology (MIT OpenCourseWare)</a> - A full MIT course with lecture notes, readings, and lab exercises covering archaeological field methods and analytical techniques including stone, ceramic, and metal artifacts. The lab components give practical experience with the analytical side of archaeology.</p>
+<p><a href="https://www.africamuseum.be/en/research/discover/publications/open-access/documents-social-sciences-humanities/fmaa" target="_blank" rel="noopener noreferrer">Field Manual for African Archaeology (Royal Museum for Central Africa)</a> - A free, downloadable 317-page field manual covering the full investigative process from site survey to publication. Though focused on African contexts, the methods are broadly applicable; use it as a practical reference alongside the MIT course.</p>
+<p><a href="https://crowcanyon.org/education/learn-about-archaeology/archaeological-dating" target="_blank" rel="noopener noreferrer">Archaeological Dating (Crow Canyon Archaeological Center)</a> - A clear, free web tutorial on relative and chronometric dating methods including dendrochronology, radiocarbon, and archaeomagnetic dating. Read this after the MIT course introduces dating concepts for a more detailed treatment.</p>
+<h3 id="archaeological-theory">Archaeological Theory</h3>
+<p>The major interpretive frameworks archaeologists use to move from material remains to statements about the past, from culture-history through processual and post-processual approaches.</p>
+<p><a href="https://archive.org/details/archaeologicalth0000john" target="_blank" rel="noopener noreferrer">Archaeological Theory: An Introduction (Internet Archive / Matthew Johnson)</a> - The standard introductory text on archaeological theory, taking a historical approach from the 1970s to the late 1990s. The Internet Archive copy is the 1999 edition, which covers the foundational theoretical landscape; read it after completing the introductory courses, as it assumes some familiarity with archaeological practice. The Renfrew and Bahn textbook listed under Introduction also contains substantial theory chapters that work well alongside this.</p>
+<h3 id="world-prehistory">World Prehistory</h3>
+<p>A global survey of the human past from early hominins through the origins of agriculture to the rise of the first civilizations.</p>
+<p><a href="https://books.google.com/books?isbn=9781138485614" target="_blank" rel="noopener noreferrer">People of the Earth: An Introduction to World Prehistory (Google Books / Brian Fagan)</a> - A narrative global prehistory from human origins to early states, written in accessible prose for newcomers. This is the primary survey text for the subject; there is no adequate free equivalent, but the MIT course listed under Introduction covers comparable ground (agriculture origins and early civilizations in the Near East and Mesoamerica) if cost is a barrier.</p>
+<h3 id="introduction-to-archaeology_1">Introduction to Archaeology</h3>
+<p>An overview of archaeological principles, the historical development of the discipline from antiquarian collecting to modern anthropological science, and the ethical standards governing material heritage.</p>
+<p><a href="https://www.coursera.org/specializations/introduction-to-archaeology" target="_blank" rel="noopener noreferrer">Introduction to Archaeology Specialization (Coursera / Rice University)</a> - Serves as the primary instructional spine for this section, offering an accessible four-course progression through archaeological history, scientific methodology, interpretation, and public ethics.</p>
+<p><a href="https://socialsci.libretexts.org/Bookshelves/Anthropology/Archaeology/Traces_-_An_Open_Introduction_to_Archaeology" target="_blank" rel="noopener noreferrer">Traces: An Open Introduction to Archaeology (LibreTexts / Society for Anthropology in Community Colleges)</a> - A free, peer-reviewed open textbook that acts as an accessible core reading companion to the Coursera course or as an independent text-based pathway for self-directed study.</p>
+<p><a href="https://www.youtube.com/playlist?list=PLsHH_OkB36-mRIj6T76nTARRqObkTY-Mf" target="_blank" rel="noopener noreferrer">Intro to Archaeology (YouTube / Professor Brian Wygal)</a> - An alternative video lecture option providing chapter-by-chapter classroom presentations aligned with Renfrew and Bahn's textbook, suited for visual learners who prefer standard lectures over the Coursera course format.</p>
+<p><a href="https://books.google.com/books?isbn=9780500294246" target="_blank" rel="noopener noreferrer">Archaeology: Theories, Methods, and Practice (Google Books / Colin Renfrew &amp; Paul Bahn)</a> - The canonical, worldwide benchmark textbook for undergraduate archaeology; serves as an in-depth reference to accompany the Wygal lectures or as an authoritative comprehensive alternative to the open textbook.</p>
+<h3 id="archaeological-methods-and-field-techniques_1">Archaeological Methods and Field Techniques</h3>
+<p>The practical procedures of archaeological research, including reconnaissance, non-invasive survey, stratigraphic excavation, laboratory artifact analysis, and scientific dating.</p>
+<p><a href="https://www.africamuseum.be/en/research/discover/publications/open-access/documents-social-sciences-humanities/fmaa" target="_blank" rel="noopener noreferrer">Field Manual for African Archaeology (Royal Museum for Central Africa / Alexandre Livingstone Smith et al.)</a> - A comprehensive, openly downloadable field guide that provides the core practical manual for this subject, walking systematically through project planning, field prospection, excavation procedures, and site recording.</p>
+<p><a href="https://ocw.mit.edu/courses/3-986-the-human-past-introduction-to-archaeology-fall-2006" target="_blank" rel="noopener noreferrer">The Human Past: Introduction to Archaeology (MIT OpenCourseWare / Harry Merrick)</a> - A university course whose laboratory modules and assignments directly complement the field manual above by giving hands-on guidance in post-excavation material analysis, including stone tools, ceramics, archaeometallurgy, and faunal remains.</p>
+<p><a href="https://crowcanyon.org/education/learn-about-archaeology/archaeological-dating" target="_blank" rel="noopener noreferrer">Archaeological Dating (Crow Canyon Archaeological Center)</a> - A concise, beginner-friendly online tutorial covering relative and chronometric dating techniques; read this as a conceptual primer before tackling the more technical dating chapters in the field manual and the MIT course.</p>
+<h3 id="archaeological-theory_1">Archaeological Theory</h3>
+<p>The primary interpretive models through which archaeologists construct explanations of human culture and social change from material evidence, spanning culture history, processualism, and post-processual frameworks.</p>
+<p><a href="https://books.google.com/books?isbn=9781118475027" target="_blank" rel="noopener noreferrer">Archaeological Theory: An Introduction (Google Books / Matthew Johnson)</a> - The standard, approachable survey of archaeological theory, designed to be studied after completing the introductory and methodological units; for a free foundational alternative, review the theory chapters in the LibreTexts textbook or the Renfrew and Bahn volume listed in the introductory section.</p>
+<h3 id="world-prehistory_1">World Prehistory</h3>
+<p>A global synthesis of the human career from early hominin evolution and Paleolithic dispersals through the emergence of agriculture to the formation of ancient complex societies and states.</p>
+<p><a href="https://books.google.com/books?isbn=9781138485614" target="_blank" rel="noopener noreferrer">People of the Earth: An Introduction to World Prehistory (Google Books / Brian Fagan &amp; Nadia Durrani)</a> - The canonical introductory narrative text for global prehistory, tracing human development across every major world region; if purchasing a commercial textbook is a barrier, the lecture notes of the MIT course listed under Archaeological Methods and Field Techniques cover comparable foundational milestones in agricultural origins and early state formation.</p>
+    </article>
+  </main>
+
+</body>
+</html>
